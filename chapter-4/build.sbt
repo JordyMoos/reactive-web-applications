@@ -6,3 +6,4 @@ routesGenerator := InjectedRoutesGenerator
 routesImport += "binders.PathBinders._"
 routesImport += "binders.QueryStringBinders._"
 com.typesafe.sbt.SbtScalariform.scalariformSettings
+libraryDependencies += filters
