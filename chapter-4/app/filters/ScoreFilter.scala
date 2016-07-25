@@ -7,9 +7,7 @@ import play.api.libs.iteratee.Enumerator
 import scala.concurrent.Future
 
 class ScoreFilter extends Filter {
-  override def apply(nextFilter: (RequestHeader) => Future[Result])
-                    (rh: RequestHeader)
-                    : Future[Result] = {
+  override def apply(nextFilter: (RequestHeader) => Future[Result])(rh: RequestHeader): Future[Result] = {
     val result = nextFilter(rh)
     result.map { res =>
       if (res.header.status == 200 || res.header.status == 406) {
